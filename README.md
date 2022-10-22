@@ -8,7 +8,7 @@ Coming soon.
 @inproceedings{svete-etal-2022-failure-backward,
     title = "Acyclic Weighted Finite-State Automata with Failure Arcs",
     author = "Svete, Anej  and
-      Dayan, Dayan  and
+      Dayan, Benjamin  and
       Vieira, Tim  and
       Cotterell, Ryan  and
       Eisner, Jason",
