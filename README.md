@@ -12,7 +12,7 @@ Coming soon.
       Vieira, Tim  and
       Cotterell, Ryan  and
       Eisner, Jason",
-    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2022",
+    booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
     month = dec,
     year = "2022",
     address = "Abu Dhabi, United Arab Emirates",
