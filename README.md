@@ -1,7 +1,15 @@
 # Algorithms for Acyclic Weighted Finite-State Automata with Failure Arcs
 Code accompanying the EMNLP 2022 publication "Algorithms for Acyclic Weighted Finite-State Automata with Failure Arcs".
 
-Coming soon.
+The code implements Algorithms 1, 2, 3, 4, 5, and 6 from the paper.
+Algorithm 2 is implemented as `expand_phi_arcs` in the `Transformer` class, while the other algorithms are implemented in the `Pathsum` class.
+
+### Running the Code
+The code only requires `pytest` to run. To unit-test the code, simply run 
+```
+pytest test_failure_arcs_backward.py
+```
+from the `src` directory.
 
 ## Cite
 ```
