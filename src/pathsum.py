@@ -234,10 +234,9 @@ class Pathsum:
             γ.undo(len(list(A.out_symbols(q, ignore_phi=True))))
 
         def _visit_plus(γ, q, qT):  # Line 14
-            if q != qT:
+            if A.qφ(q) != qT:
                 _visit_plus(γ, A.qφ(q), qT)
-                _visit(γ, q)  # NEW; you don't visit if q == qT since it's already
-                # visited by definition of qT
+            _visit(γ, q)
 
         def _descendant(q, qʼ) -> bool:  # Footnote 9
             """Tests whether q is a descendant of qʼ"""
@@ -253,13 +252,13 @@ class Pathsum:
                 γs[T] = Aggregator(A.R, A.Sigma)
                 _visit(γs[T], q)
                 qs[T] = q
+            else:
+                while not _descendant(qs[T], q):  # Line 8
+                    _leave(γs[T], qs[T])
+                    qs[T] = A.qφ(qs[T])
 
-            while not _descendant(qs[T], q):  # Line 8
-                _leave(γs[T], qs[T])
-                qs[T] = A.qφ(qs[T])
-
-            _visit_plus(γs[T], q, qs[T])  # Line 10
-            qs[T] = q
+                _visit_plus(γs[T], q, qs[T])  # Line 10
+                qs[T] = q
 
             fb._β[q] = γs[T].value() + A.ρ[q]  # Line 12
 
